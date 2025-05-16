@@ -17,4 +17,5 @@ It helped me learn how to use Room for local database storage and build UI with 
 ## Screenshots
 ![image](https://github.com/user-attachments/assets/3647d4f4-02a9-43cd-8370-299e2a134819)
 
+## License
 This project is for learning purposes. Feel free to use or improve it!
