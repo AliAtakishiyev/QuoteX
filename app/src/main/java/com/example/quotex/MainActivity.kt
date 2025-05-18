@@ -56,6 +56,7 @@ class MainActivity : ComponentActivity() {
         //enableEdgeToEdge()
 
 
+
         //Create database
         val db = Room.databaseBuilder(
             applicationContext,
@@ -104,9 +105,6 @@ fun MainQuotes(viewModel: QuoteViewModel) {
                     ),
                     border = BorderStroke(1.dp, color = Color.Black),
                     modifier = Modifier.fillMaxWidth().height(150.dp).padding(4.dp),
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color(0xFFF5F5F5)
-                    )
                 ){
                     Box(
                         modifier = Modifier.fillMaxSize().padding(8.dp)
