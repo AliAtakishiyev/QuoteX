@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -35,9 +36,11 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.BottomEnd
 import androidx.compose.ui.Alignment.Companion.TopEnd
 import androidx.compose.ui.Modifier
@@ -88,7 +91,7 @@ fun MainQuotes(viewModel: QuoteViewModel) {
     var quoteText by remember { mutableStateOf("") }
     var quoteTextEdit by remember  { mutableStateOf("") }
 
-    var quoteID by remember {mutableStateOf(0)}
+    var quoteID by remember { mutableIntStateOf(0) }
 
     Box(
         modifier = Modifier.fillMaxSize().padding(top = 16.dp, start = 4.dp, end = 4.dp)
@@ -103,12 +106,16 @@ fun MainQuotes(viewModel: QuoteViewModel) {
                     modifier = Modifier.fillMaxWidth().height(150.dp).padding(4.dp)
                 ){
                     Box(
-                        modifier = Modifier.fillMaxSize().padding(start = 8.dp)
+                        modifier = Modifier.fillMaxSize().padding(8.dp)
                     ){
 
                     Text(
                         text = quote.quote,
-                        modifier = Modifier.padding(4.dp)
+                        modifier = Modifier
+                            .align(Alignment.TopStart)
+                            //.padding(end = 48.dp)
+                            .fillMaxWidth(0.85f)
+                            .wrapContentHeight()
                     )
 
 
@@ -131,6 +138,8 @@ fun MainQuotes(viewModel: QuoteViewModel) {
                         ) {
                             Icon(Icons.Filled.Edit, contentDescription = "Edit Button")
                         }
+
+
 
 
 
@@ -240,4 +249,3 @@ fun MainQuotes(viewModel: QuoteViewModel) {
 
 
 }
-
